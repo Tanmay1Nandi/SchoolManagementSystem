@@ -1,0 +1,13 @@
+div.my_header_col{
+    text-align: center ;
+
+}
+label.my_input_col_text{
+    font-size: x-small;
+}
+
+div.col-2{
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}

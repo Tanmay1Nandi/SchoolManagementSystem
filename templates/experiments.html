@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block CSS %}
+
+<style>img.my_logo{
+  border-style: solid;
+  border-radius: 100%;
+  border-width:1px;
+
+}
+
+div.my_info{
+  background-color: #f9facd;
+  border-style: solid;
+  border-color: #f9facd;
+  
+  
+}
+h5.username:hover{
+  
+  text-decoration: underline;
+}
+div.my_sidebar{
+  border-right-style: solid;
+  border-right-width: 1px;
+
+}
+
+h6.my_sidebar_content_text{
+  margin-bottom: 0px;
+}
+
+div.my_sidebar_content{
+  background-color:  #FEFDED;
+  border-style: solid;
+  border-color:  #FEFDED;
+  cursor:pointer;
+ 
+}
+
+div.my_sidebar_content:hover{
+  background-color: #f9facd;
+  border-style: solid;
+  border-color: #f9facd;
+  
+  
+}
+a.my_sidebar_content_text{
+  text-decoration: none;
+  color: #FA7070;;
+}
+</style>
+
+{% endblock %}
+
+
+{% block page_content%}
+
+<div class="row" name="MAIN">
+  <div name="SIDEBAR" class="col-2  py-4 px-4 my_sidebar"
+    style="word-wrap: break-word; background-color: #FEFDED; color: #FA7070;  min-height: 600px; height: auto; ">
+    <div name="INFO" class="p-2 row my_info">
+      <div name="INFO_Col" class="col-12">
+        <div class="row ">
+          <div class="col-6 mx-auto">
+            <img src="/Static/user_logo.jpg" class="my_logo" width='100%'>
+          </div>
+        </div>
+        <div class="row pt-2" style="text-align: center;">
+          <h5 class="username">Aryan Sharma</h5>
+        </div>
+        <div class="row " style="text-align: center;">
+          <p style="font-size:small;margin-bottom: 0; "><a href="/">Log Out <i class="bi bi-box-arrow-in-left"></i></a></p>
+        </div>
+
+      </div>
+    </div>
+
+    <div name="Contents" class="row my-2">
+      <div class="col-12">
+        
+        <a href="/" class="my_sidebar_content_text">  
+          <div class="row py-2 my_sidebar_content ">
+            
+            <h6 class="my_sidebar_content_text"><i class="bi bi-person"></i> Profile</h6>
+          </div>
+        </a>
+
+        <a href="/" class="my_sidebar_content_text">
+          <div class="row py-2 my_sidebar_content ">
+            <h6 class="my_sidebar_content_text"><i class="bi bi-pencil"></i> Assignments</h6>
+          </div>
+        </a>
+
+        <a href="/" class="my_sidebar_content_text">
+          <div class="row py-2 my_sidebar_content ">
+            <h6 class="my_sidebar_content_text"> <i class="bi bi-journal-check"></i> Result</h6>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+  <div class="col-10 border-primary py-4 px-5">
+   
+    {% block loggedin_content %}
+    {% endblock %}
+{% endblock %}

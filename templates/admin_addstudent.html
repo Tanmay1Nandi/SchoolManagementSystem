@@ -1,0 +1,194 @@
+{% extends 'admin_base.html' %}
+
+{% block loggedin_content %}
+
+
+<div class="row">
+    <div class="col-10 mx-auto py-5">
+        <form class="row g3" method="post">    
+            <div class="row h5 text-secondary border-bottom border-2 border-secondary px-1">
+                <p><i class="bi bi-file-person"></i> Add Personal Details</p>
+            </div>
+            <div class="row ">
+                <!-- <form class=" row g3"> -->
+                    <div class="col-md-6 py-2">
+                        <label for="inputEmail4" class="form-label">First Name:</label>
+                        <input class="form-control" name="fname" >
+                    </div>
+                    <div class="col-md-6 py-2">
+                        <label for="inputPassword4" class="form-label">Last Name:</label>
+                        <input class="form-control" name="laname"  >
+                    </div>
+                    <div class="col-12 pb-2">
+                        <label for="inputAddress" class="form-label">Email:</label>
+                        <input type="text" class="form-control" name="email" >
+                    </div>
+
+                    <div class="col-md-6 pb-2">
+                        <label for="inputEmail4" class="form-label">Father's/Gaurdian's Name:</label>
+                        <input class="form-control" name="fathername"  >
+                    </div>
+
+                    <div class="col-md-6 pb-2">
+                        <label for="inputPassword4" class="form-label">Mother's/Gaurdian's name:</label>
+                        <input class="form-control" name="mothername" >
+                    </div>
+                    <div class="col-12 pb-2">
+                        <label for="inputAddress2" class="form-label">Address:</label>
+                        <input type="text" class="form-control" id="inputAddress2" name="address"
+                            >
+                    </div>
+                    <div class="col-md-6 pb-2">
+                        <label for="inputEmail4" class="form-label">Student's Phone:</label>
+                        <input class="form-control" name="studentphone" >
+                    </div>
+                    <div class="col-md-6 pb-2">
+                        <label for="inputPassword4" class="form-label">Parent's/Guardian's Phone:</label>
+                        <input class="form-control" name="parentphone" >
+                    </div>
+
+                    <div class="col-md-3 pb-2">
+                        <label for="inputPassword4" class="form-label">Blood Group:</label>
+                        <select class="form-select" aria-label="Default select example" name="bloodgroup">
+                            <option value="A+" selected>A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O+">O-</option>
+                            <option value="NA">Not Known</option>
+                            
+                            
+                        </select>
+                    </div>
+
+                    <div class="col-md-3 pb-2">
+                        <label for="inputPassword4" class="form-label">Gender:</label>
+                        <select class="form-select" aria-label="Default select example" name="gender">
+                            <option selected Value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            
+                        </select>
+                    </div>
+
+                    <div class="col-md-3 pb-2">
+                        <label for="inputPassword4" class="form-label">Conveyance:</label>
+                        <select class="form-select" aria-label="Default select example" name="conveyance">
+                            <option selected value="Self">Self</option>
+                            <option value="School Bus">School Bus</option>
+                            
+                            
+                        </select>
+                    </div>
+
+                    <div class="col-md-3 pb-2">
+                        <label for="inputPassword4" class="form-label">DOB</label>
+                        <input class="form-control" name="dob">
+                    </div>
+
+
+
+
+
+
+                <!-- </form> -->
+
+
+            </div>
+            <div class="h5 row mt-5 text-secondary border-bottom border-2 border-secondary px-1">
+                <p><i class="bi bi-journal-text"></i > Add Academic Details</p>
+            </div>
+            <div class="row">
+                <!-- <form class=" row g3" > -->
+                    <div class="col-md-3 py-2">
+                        <label for="inputEmail4" class="form-label">Class:</label>
+                        <input class="form-control" name="class">
+                    </div>
+                    <div class="col-md-3 py-2">
+                        <label for="inputPassword4" class="form-label">Section:</label>
+                        <input class="form-control" name="section" >
+                    </div>
+
+                    <div class="col-md-6 py-2">
+                        <label for="inputPassword4" class="form-label">Class Teacher:</label>
+                        <input class="form-control " disabled placeholder="Will be filled automatically" >
+                    </div>
+
+
+                    <div class="col-md-3 pb-2">
+                        <label for="inputAddress" class="form-label">Class Roll Number:</label>
+                        <input type="text" class="form-control" disabled placeholder="Will be filled automatically" >
+                    </div>
+
+                    <div class="col-md-6 pb-2">
+                        <label for="inputEmail4" class="form-label">Admission Number:</label>
+                        <input class="form-control" name="admno" readonly value="{{admno}}" placeholder="{{admno}}">
+                    </div>
+
+                    <div class="col-md-3 pb-2">
+                        <label for="inputAddress" class="form-label">Date Of Admission:</label>
+                        <input type="text" class="form-control" placeholder="" name="DOA" >
+                    </div>
+
+                    <div class="col-md-4 pb-2">
+                        <label for="inputPassword4" class="form-label">Subject 1:</label>
+                        <input class="form-control" name="sub1" >
+                    </div>
+
+                    <div class="col-md-4 pb-2">
+                        <label for="inputPassword4" class="form-label">Subject 2:</label>
+                        <input class="form-control" name="sub2"  >
+                    </div>
+
+                    <div class="col-md-4 pb-2">
+                        <label for="inputPassword4" class="form-label">Subject 3:</label>
+                        <input class="form-control" name="sub3" >
+                    </div>
+
+                    <div class="col-md-4 pb-2">
+                        <label for="inputPassword4" class="form-label">Subject 4:</label>
+                        <input class="form-control" name="sub4" >
+                    </div>
+
+                    <div class="col-md-4 pb-2">
+                        <label for="inputPassword4" class="form-label">Subject 5:</label>
+                        <input class="form-control"  name="sub5">
+                    </div>
+
+                    <div class="col-md-4 pb-2">
+                        <label for="inputPassword4" class="form-label">Subject 6:</label>
+                        <input class="form-control" placeholder="Leave empty if not applicable" name="sub6">
+                    </div>
+
+                    <div class="row my-5">
+                        <div class="d-grid gap-2 col-3 mx-auto ">
+                            <button class="btn btn-primary" type="submit" name="btn">Add Student</button>
+                        
+                        </div>        
+                    </div>
+                    <div class="row">
+                        <div class="h6 text-danger col-auto mx-auto " style="padding: 0;">NOTE: Default password will be First 4 Letters of first name followed by last 4 digits of admisison number. </div>
+                    </div>
+
+
+
+                <!-- </form> -->
+
+            </div>
+
+        </form>
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}

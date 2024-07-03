@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block CSS %}
+<link href="/Static/register_css.css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block page_content %}
+
+<div class="container  py-3">
+    <div class="row my_header mb-3">
+        <div class="col-7"></div>
+        <div class="col-5">
+            {% if alert_text != '' %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ alert_text }} {% if alert_text=="Account created succesfully!" %} <a href="/login">Click Here</a> to login.{%endif%}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endif %}  
+        </div>
+        
+    </div>
+  
+    <div class="row">
+        <div class="col-7 " style="margin-top: -100px;">
+            <div class="row ">
+                <div class="col-10  mx-auto">
+                    <img src="/Static/login2.jpg" class="img-fluid" >
+                </div>    
+            </div>
+        </div>
+        <div class="col-5 ">
+            <form method="post" class="row g-3 my-5">
+                <div class="row my-2">
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Admission Number</label>
+                        <input type="tel" name="admno" class="form-control" required id="inputAddress2" placeholder="Admission Number">
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Password </label>
+                    <input type="password" name="passwd" class="form-control" required id="inputAddress2" placeholder="Password">
+                    </div>
+                </div> 
+                <div class="row my-2">   
+                    <div class="col-5 mx-auto">
+                        <button type="submit" style="width: 100%;" name="btn" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+                <div class="row my-2">     
+                    <div class="col-10 mx-auto" style="text-align: center;">
+                        <p>Don't have an Account? <a href="/register">Click Here</a>  </p>
+                    </div> 
+                </div>
+            </form>   
+        </div>
+        
+       
+    </div>
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}

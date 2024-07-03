@@ -1,0 +1,151 @@
+{% extends "admin_base.html" %}
+
+{% block loggedin_content %}
+
+<div class="row">
+    <div class="col">
+
+     <form method="post" >
+        <div class="row">
+            <div class="col-10 mx-auto">
+                <div class="h5 px-2 border-bottom border-secondary border-2 mb-4 text-secondary" >Add Fee Details</div>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col-10 mx-auto bg-tertiary">
+                <div class="row">
+                    <div class="col-8 mx-auto">
+                        <div class="input-group mb-3 color-dark">
+                            <input type="text" class="form-control" id="admnoinput" name="admno" required placeholder="Enter Admission Number" >
+                            <button class="btn btn-outline-secondary" type="button" id="searchbtn" onclick="search()" ><i class="bi bi-search"></i> Search Student</button>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="row ">
+            <div class="col-10 mx-auto">
+                <div class="row ">
+                    <!-- <form class=" row g3"> -->
+                        <div class="col-md-5 py-2">
+                            <label for="inputEmail4"  class="form-label">Student's Name</label>
+                            <input class="form-control" id="name" disabled name="fname" >
+                        </div>
+                        <div class="col-md-5 py-2">
+                            <label for="inputPassword4"  class="form-label">Father's/ Gaurdian's Name</label>
+                            <input class="form-control" id="fathername" disabled name="laname"  >
+                        </div>
+                        <div class="col-md-2 py-2">
+                            <label for="inputEmail4"  class="form-label">Class</label>
+                            <input class="form-control" id="clas" disabled name="fathername"  >
+                        </div>    
+                    </div>    
+                </div>        
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-10 mx-auto">
+                <div class="row">
+                    <div class="col mx-auto">
+        
+                        <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th scope="col-2">S No.</th>
+                                <th scope="col-4">Month</th>
+                                <th scope="col-2">Ammount</th>
+                                <th scope="col-2">Date of Deposition  </th>
+                                <th scope="col-2">Receit number  </th>
+                              </tr>
+                            </thead>
+                            <tbody id="table">
+                              
+                            
+                            </tbody>
+                          </table>
+                    </div> 
+        
+        
+            </div>
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-10 mx-auto">
+                <div class="row ">
+                    
+                    <div class="col-md-4 pb-3">
+                        <label for="inputPassword4" class="form-label">Month:</label>
+                        <select class="form-select" aria-label="Default select example" name="month">
+                            <option selected Value="apr">April</option>
+                            <option value="may">May</option>
+                            <option value="jun">June</option>
+                            <option value="jul">July</option>
+                            <option value="aug">August</option>
+                            <option value="sep">September</option>
+                            <option value="oct">October</option>
+                            <option value="nov">November</option>
+                            <option value="dec">December</option>
+                            <option value="jan">January</option>
+                            <option value="feb">February</option>
+                            <option value="mar">March</option>
+
+                            
+                        </select>
+                    </div>
+
+                    <div class="col-md-4 pb-3">
+                        <label for="inputPassword4" class="form-label">Payment method:</label>
+                        <select class="form-select" onchange="select()" id="paymentmethod" name="paymentmethod">
+                            <option selected value="cash">Cash</option>
+                            <option value="cheque">Cheque</option>
+                            <option value="UPI">UPI</option>
+                            
+                            
+                        </select>
+                    </div>     
+
+                    <div class="col-md-4 pb-3">
+                        <label for="inputEmail4" class="form-label">Receit Number:</label>
+                        <input class="form-control" disabled name="fname" required placeholder="{{rctnum}}" >
+                    </div>
+                    
+                    <div class="col-md-6 pb-3">
+                        <label for="inputEmail4" class="form-label" >Amt:</label>
+                        <input class="form-control" required name="amt" >
+                    </div>
+                    
+                    <div class="col-md-6 pb-3">
+                        <label for="inputEmail4" class="form-label" id="paymentidlbl"><p style=" padding: 0;margin:0; visibility: hidden;">a</p></label>
+                        <input class="form-control"  name="paymentid" readonly placeholder="" style="visibility: hidden;" id="paymentid">
+                    </div>
+
+                    
+
+                </div>        
+            </div>
+        </div>
+        
+        <div class="row my-5">
+            <div class="col-3 mx-auto">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-secondary" type="submit">Submit Entry</button>
+                    
+                  </div>
+            </div>
+        </div>
+
+    </form>
+
+
+
+    </div>
+</div>
+<script src="/Static/javascript/admin_addfeedetail.js"></script>
+ 
+{% endblock %}

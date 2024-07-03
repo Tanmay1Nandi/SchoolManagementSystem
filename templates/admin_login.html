@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block CSS %}
+<link href="/Static/register_css.css" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block page_content %}
+
+<div class="container  py-5">
+    <div class="row my_header mb-3 my-5">
+        
+        <div class="col-5 mx-auto">
+            
+            <div class="row h4 px-4 py-1 border-bottom border-2 border-dark">Admin Login</div>
+            
+            {% if alert_text != '' %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ alert_text }} {% if alert_text=="Account created succesfully!" %} <a href="/login">Click Here</a> to login.{%endif%}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+            {% endif %}  
+        </div>
+        
+    </div>
+  
+    <div class="row">
+        
+        <div class="col-5 mx-auto" style="min-height: 100%;">
+            <form method="post" class="row g-3 ">
+                <div class="row my-2">
+                    <div class="col-12">
+                        <label for="inputAddress" class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" id="inputAddress2" placeholder="username">
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Password </label>
+                    <input type="password" name="passwd" class="form-control" id="inputAddress2" placeholder="Password">
+                    </div>
+                </div> 
+                <div class="row my-2">   
+                    <div class="col-5 mx-auto">
+                        <button type="submit" style="width: 100%;" name="btn" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+                <div class="row my-2">     
+                    <div class="col-10 mx-auto" style="text-align: center;">
+                       Contact Site Manager in case of any problem.
+                    </div> 
+                </div>
+            </form>   
+        </div>
+        
+       
+    </div>
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}

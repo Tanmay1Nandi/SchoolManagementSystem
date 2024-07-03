@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block CSS %}
+<link href="/Static/calculator_css.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block page_content %}
+<form method="POST">  
+  <div class="row my_header">
+    <div class="col"></div>
+    <div class="col my_header_col">
+        <h3 class='my_header_col_text'>Calculator</h3>
+    </div>
+    <div class="col"></div>
+  </div>
+
+  <div class="row my_input px-3 py-3">
+    <div class="col"></div>
+    
+    <div class="col my_input_col">
+        <div class="input-group ">
+            
+            <input type="text" class="form-control" name="num1" placeholder="Number 1" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+    </div>
+    <div class="col my_input_col">
+        <div class="input-group">
+          
+            <input type="text" class="form-control" name="num2" placeholder="Number 2" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+    </div>
+    <div class="col"></div>
+  </div>
+
+  <div class="row my_buttons">
+
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col">
+        <button type="submit" name="btn" value="addbtn" class="btn btn-secondary">Add</button>
+    </div>
+    <div class="col">
+        <button type="submit" name="btn" value="subbtn"  class="btn btn-secondary">Substract</button>
+    </div>
+    <div class="col">
+        <button type="submit" name="btn" value="mulbtn" class="btn btn-secondary">Multiply</button>
+    </div>
+    <div class="col">
+        <button type="submit" name="btn" value="divbtn" class="btn btn-secondary">Divide</button>
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+
+  </div>
+
+  <div class="row my-3 my_output">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col">
+        <div class="input-group ">
+            <input type="text" class="form-control" name="output" value="{{ ans }}" readonly placeholder="{{ ans }}" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+    </div>
+    <div class="col">
+        <div class="col">
+            <button type="submit" name="btn" value="clrbtn"  class="btn btn-secondary">Clear</button>
+        </div>
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+</form>
+  
+
+{% endblock %}
